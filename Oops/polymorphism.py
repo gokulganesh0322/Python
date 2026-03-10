@@ -89,23 +89,22 @@
 # If more than 3 numbers are passed, return their sum.
 
 
-# class Maths():
-#     def mult(self,a,b):
-#         return a*b
-    
-# class Average(Maths):
-#     def mult(self,a,b,c):
-#         return a+b+c//3
-    
-# class Sum(Maths):
-#     def mult(self,*args):
-        
-#         return sum(args)
-    
 
-# obj1 = Maths()
-# obj2 = Average()
-# obj3 = Sum()
-# print(f"Multiplication the Value :",obj1.mult(5,6))
-# print(f"Averge the Value :",obj2.mult(7,6,3))
-# print(f"Sum the All Value :",obj3.mult(5,6,5,9,7))
+class Calculator():
+    def calculate(self, *args):
+        if len(args) == 2:
+            return args[0] * args[1]
+
+        elif len(args) == 3:
+            return sum(args) / 3
+
+        elif len(args) > 3:
+            return sum(args)
+
+        else:
+            return "Please pass at least two numbers"
+        
+
+Object = Calculator()
+
+print(f"VAlue :",Object.calculate(5,5,6,5,89,6))
